@@ -35,4 +35,17 @@ More info: [Generating](https://hexo.io/docs/generating.html)
 $ hexo deploy
 ```
 
+``` objc
+- (void)startAnimation0WithDelay:(NSTimeInterval)delay {
+    self.delay = delay;
+    [self beforeAnimation];
+    @weakify(self);
+    [UIView animateWithDuration:delay animations:^{} completion:^(BOOL finished) {
+        @strongify(self);
+        [self startPathAnimation0];
+    }];
+    
+}
+```
+
 More info: [Deployment](https://hexo.io/docs/deployment.html)
